@@ -1,0 +1,171 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Iasmyn Fotografia</title>
+
+<!-- Fonte estilosa tipo logo -->
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+<!-- SimpleLightbox CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.1/simple-lightbox.min.css" rel="stylesheet">
+
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif; }
+  body { background:#000; color:#fff; line-height:1.6; scroll-behavior:smooth; }
+
+  a { text-decoration:none; color:inherit; }
+
+  /* Header */
+  header { display:flex; flex-direction:column; align-items:center; padding:15px 20px; background:#111; position:sticky; top:0; z-index:1000; }
+  header h1 { font-family: 'Great Vibes', cursive; font-size:2.5rem; font-weight:400; color:#fff; margin-bottom:10px; text-align:center; }
+  nav { display:flex; flex-wrap:wrap; justify-content:center; gap:15px; }
+  nav a { color:#fff; font-weight:bold; font-size:1rem; transition:0.3s; }
+  nav a:hover { color:#aaa; }
+
+  /* Hero */
+  .hero { display:flex; flex-direction:column; justify-content:center; align-items:center; height:60vh; background: url('https://picsum.photos/800/600?grayscale') center/cover no-repeat; text-align:center; filter:grayscale(100%); opacity:0; transform:translateY(20px); transition:all 1s ease-out; padding:0 10px; }
+  .hero.visible { opacity:1; transform:translateY(0); }
+  .hero h2 { font-size:2rem; margin-bottom:10px; text-shadow:2px 2px 8px #000; }
+  .hero p { font-size:1rem; margin-bottom:20px; text-shadow:1px 1px 6px #000; }
+  .hero .btn { padding:12px 20px; background:#fff; color:#000; border-radius:30px; font-weight:bold; transition:0.3s; font-size:1rem; }
+  .hero .btn:hover { background:#aaa; transform:scale(1.05); }
+
+  /* Portfólio */
+  .portfolio { padding:40px 10px; text-align:center; opacity:0; transform:translateY(20px); transition:all 1s ease-out; }
+  .portfolio.visible { opacity:1; transform:translateY(0); }
+  .portfolio h2 { font-size:1.8rem; margin-bottom:30px; }
+  .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(140px,1fr)); gap:15px; }
+  .grid a img { width:100%; border-radius:10px; transition:0.3s; filter: grayscale(100%); }
+  .grid a img:hover { transform: scale(1.05); filter:grayscale(0%); box-shadow:0 8px 15px rgba(255,255,255,0.3); }
+
+  /* Sobre */
+  .about, .services, .contact { padding:40px 10px; text-align:center; opacity:0; transform:translateY(20px); transition:all 1s ease-out; }
+  .about.visible, .services.visible, .contact.visible { opacity:1; transform:translateY(0); }
+  .about h2, .services h2, .contact h2 { font-size:1.8rem; margin-bottom:15px; }
+  .about p, .services p, .contact p { font-size:0.95rem; margin-bottom:15px; max-width:300px; margin-left:auto; margin-right:auto; opacity:0.9; }
+
+  .services ul { list-style:none; padding:0; margin:0 auto 15px; max-width:250px; }
+  .services li { margin-bottom:8px; }
+
+  .contact .whatsapp-btn { display:inline-block; padding:12px 20px; background:#fff; color:#000; border-radius:30px; font-weight:bold; transition:0.3s; font-size:1rem; }
+  .contact .whatsapp-btn:hover { background:#aaa; transform:scale(1.05); }
+
+  /* Footer */
+  footer { padding:15px 10px; text-align:center; opacity:0.7; background:#111; font-size:0.85rem; }
+
+  /* Música botão fixo */
+  #toggleMusic { position:fixed; bottom:15px; left:15px; z-index:1000; padding:10px 15px; background:#fff; color:#000; border:none; border-radius:30px; cursor:pointer; font-weight:bold; font-size:0.9rem; }
+</style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>Iasmyn Fotografia</h1>
+    <nav>
+      <a href="#portfolio">Portfólio</a>
+      <a href="#about">Sobre</a>
+      <a href="#services">Serviços</a>
+      <a href="#contact">Contato</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h2>Capturando momentos que contam histórias</h2>
+    <p>Transforme seus instantes em lembranças inesquecíveis</p>
+    <a href="#contact" class="btn">Vamos criar memórias?</a>
+  </section>
+
+  <!-- Portfólio -->
+  <section id="portfolio" class="portfolio">
+    <h2>Portfólio</h2>
+    <div class="grid">
+      <!-- Fotos do portfólio -->
+      <a href="img/foto1.jpg"><img src="img/foto1.jpg" alt="Foto 1"></a>
+      <a href="img/foto2.jpg"><img src="img/foto2.jpg" alt="Foto 2"></a>
+      <a href="img/foto3.jpg"><img src="img/foto3.jpg" alt="Foto 3"></a>
+      <a href="img/foto4.jpg"><img src="img/foto4.jpg" alt="Foto 4"></a>
+      <a href="img/foto5.jpg"><img src="img/foto5.jpg" alt="Foto 5"></a>
+      <a href="img/foto6.jpg"><img src="img/foto6.jpg" alt="Foto 6"></a>
+      <a href="img/foto7.jpg"><img src="img/foto7.jpg" alt="Foto 7"></a>
+      <a href="img/foto8.jpg"><img src="img/foto8.jpg" alt="Foto 8"></a>
+      <a href="img/foto9.jpg"><img src="img/foto9.jpg" alt="Foto 9"></a>
+      <a href="img/foto10.jpg"><img src="img/foto10.jpg" alt="Foto 10"></a>
+      <a href="img/foto11.jpg"><img src="img/foto11.jpg" alt="Foto 11"></a>
+      <a href="img/foto12.jpg"><img src="img/foto12.jpg" alt="Foto 12"></a>
+      <a href="img/foto13.jpg"><img src="img/foto13.jpg" alt="Foto 13"></a>
+      <a href="img/foto14.jpg"><img src="img/foto14.jpg" alt="Foto 14"></a>
+      <a href="img/foto15.jpg"><img src="img/foto15.jpg" alt="Foto 15"></a>
+      <a href="img/foto16.jpg"><img src="img/foto16.jpg" alt="Foto 16"></a>
+    </div>
+  </section>
+
+  <!-- Sobre -->
+  <section id="about" class="about">
+    <h2>Sobre Mim</h2>
+    <p>Sou fotógrafa dedicada a capturar momentos que realmente importam. Cada clique busca mostrar a essência de cada pessoa e cada instante.</p>
+    <p>Trabalho com ensaios pessoais, eventos, retratos e projetos criativos. Meu objetivo é criar imagens que se transformem em memórias inesquecíveis.</p>
+  </section>
+
+  <!-- Serviços -->
+  <section id="services" class="services">
+    <h2>Serviços</h2>
+    <p>Ofereço sessões de fotos personalizadas para cada cliente. Entre os meus serviços estão:</p>
+    <ul>
+      <li>📸 Ensaios individuais e em família</li>
+      <li>💍 Casamentos e eventos especiais</li>
+      <li>🎨 Retratos criativos</li>
+      <li>🖼️ Edição profissional e entrega digital em alta qualidade</li>
+    </ul>
+    <p>Vamos juntos transformar momentos em memórias que você vai guardar para sempre.</p>
+  </section>
+
+  <!-- Contato -->
+  <section id="contact" class="contact">
+    <h2>Contato</h2>
+    <p>Entre em contato agora e agende sua sessão!</p>
+    <a href="https://wa.me/5521972949427" target="_blank" class="whatsapp-btn">💬 WhatsApp</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    © 2026 Iasmyn Fotografia - Todos os direitos reservados
+  </footer>
+
+  <!-- Música -->
+  <audio id="musica" src="audio/musica.mp3" loop></audio>
+  <button id="toggleMusic">▶️ Música</button>
+
+  <!-- SimpleLightbox JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.1/simple-lightbox.min.js"></script>
+  <script>
+    const music = document.getElementById('musica');
+    const btn = document.getElementById('toggleMusic');
+
+    btn.addEventListener('click', () => {
+      if (music.paused) {
+        music.play();
+        btn.textContent = '⏸️ Pausar';
+      } else {
+        music.pause();
+        btn.textContent = '▶️ Música';
+      }
+    });
+
+    window.onload = () => {
+      location.hash = "#portfolio";
+
+      // Fade-in animações
+      document.querySelectorAll('.hero, .portfolio, .about, .services, .contact').forEach(el => {
+        setTimeout(() => { el.classList.add('visible'); }, 200);
+      });
+
+      // Lightbox
+      new SimpleLightbox('.grid a', { captionsData: 'alt', captionDelay: 250 });
+    };
+  </script>
+</body>
+</html>
